@@ -31,7 +31,7 @@ export default function HeroSection() {
           className="space-y-8"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Empowerin Telecom with
+            Empowering Telecom with
             <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Top IT Talent
             </span>
