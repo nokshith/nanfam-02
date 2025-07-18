@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, MapPin, Clock, DollarSign, Users, CalendarDays, Filter } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const ApplicationForm = dynamic(() => import('./components/ApplicationForm'), { ssr: false });
 
 export default function Jobs() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,6 +13,8 @@ export default function Jobs() {
   const [experienceFilter, setExperienceFilter] = useState('');
   const [jobs, setJobs] = useState<any[]>([]);
   const [floatingElements, setFloatingElements] = useState<JSX.Element[]>([]);
+  const [showForm, setShowForm] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<any>(null);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -64,6 +69,11 @@ export default function Jobs() {
     const matchesExperience = !experienceFilter || job.experience === experienceFilter;
     return matchesSearch && matchesLocation && matchesExperience;
   });
+
+  const handleApplyClick = (job: any) => {
+    setSelectedJob(job);
+    setShowForm(true);
+  };
 
   return (
     <main className="pt-16">
@@ -190,7 +200,10 @@ export default function Jobs() {
                   ))}
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                <button
+                  onClick={() => handleApplyClick(job)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                >
                   Apply Now
                 </button>
               </motion.div>
@@ -199,55 +212,18 @@ export default function Jobs() {
         </div>
       </section>
 
-      {/* Why Choose Namfam */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Choose Namfam?</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We're more than just a recruitment agency – we're your career partners.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Exclusive Opportunities',
-                description: 'Access to positions not found elsewhere, directly from our partner companies.',
-                icon: '🚀',
-              },
-              {
-                title: 'Career Guidance',
-                description: 'Personalized advice and support throughout your job search and career journey.',
-                icon: '🎯',
-              },
-              {
-                title: 'Industry Expertise',
-                description: 'Deep knowledge of the telecom industry and what companies are looking for.',
-                icon: '💡',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="group relative p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700"
-              >
-                <div className="text-4xl mb-4 z-10 relative">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 z-10 relative">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 z-10 relative">{item.description}</p>
-              </motion.div>
-            ))}
+      {showForm && selectedJob && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl max-w-xl w-full shadow-lg relative">
+            <ApplicationForm
+              jobId={selectedJob.id}
+              jobTitle={selectedJob.title}
+              companyName={selectedJob.company}
+              onClose={() => setShowForm(false)}
+            />
           </div>
         </div>
-      </section>
+      )}
     </main>
   );
 }
