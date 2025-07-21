@@ -24,6 +24,7 @@ export default function ApplicationForm({
     experience: '',
     resume: null as File | null,
   });
+
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -44,22 +45,25 @@ export default function ApplicationForm({
     setSubmitting(true);
 
     try {
-      let uploadedFileId = null;
+      let uploadedFileId: number | null = null;
+      let resumeUrl: string | null = null;
 
-      // Upload resume file to Strapi
+      // Upload resume to Strapi
       if (formData.resume) {
         const fileData = new FormData();
         fileData.append('files', formData.resume);
 
-        const uploadRes = await axios.post(
+        const res = await axios.post(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/upload`,
           fileData
         );
 
-        uploadedFileId = uploadRes.data[0].id;
+        const uploaded = res.data[0];
+        uploadedFileId = uploaded.id;
+        resumeUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}/uploads/${uploaded.hash}${uploaded.ext}`;
       }
 
-      // Submit job application to Strapi
+      // Submit application to Strapi
       const applicationPayload = {
         data: {
           fullName: formData.fullName,
@@ -76,12 +80,10 @@ export default function ApplicationForm({
         applicationPayload
       );
 
-      // Send email via custom API route
+      // Trigger backend email route
       await fetch('/api/send-application', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fullName: formData.fullName,
           email: formData.email,
@@ -89,6 +91,7 @@ export default function ApplicationForm({
           experience: formData.experience,
           jobTitle,
           companyName,
+          resumeUrl,
         }),
       });
 
@@ -98,7 +101,7 @@ export default function ApplicationForm({
         onClose();
       }, 2000);
     } catch (error) {
-      console.error('Submission failed:', error);
+      console.error('Application error:', error);
     } finally {
       setSubmitting(false);
     }
@@ -113,6 +116,7 @@ export default function ApplicationForm({
         >
           <X />
         </button>
+
         <h2 className="text-2xl font-semibold mb-4">Apply for this Job</h2>
 
         {success ? (

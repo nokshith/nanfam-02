@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const { fullName, email, phone, experience, jobTitle, companyName } = body;
+  const { fullName, email, phone, experience, jobTitle, companyName, resumeUrl } = body;
 
   if (!fullName || !email || !phone || !experience || !jobTitle || !companyName) {
     return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 });
@@ -24,18 +24,28 @@ export async function POST(req: Request) {
 
     // Step 2: Email content
     const mailOptions = {
-      from: `"Namfam Job Portal" <${process.env.NEXT_PUBLIC_GMAIL_USER}>`,
-      to: process.env.NEXT_PUBLIC_RECEIVER_EMAIL,
-      subject: `New Job Application: ${jobTitle} at ${companyName}`,
-      html: `
-        <h2>New Job Application</h2>
-        <p><strong>Job:</strong> ${jobTitle} at ${companyName}</p>
-        <p><strong>Full Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Experience:</strong><br/>${experience}</p>
-      `,
-    };
+  from: `"Namfam Job Portal" <${process.env.NEXT_PUBLIC_GMAIL_USER}>`,
+  to: process.env.NEXT_PUBLIC_RECEIVER_EMAIL,
+  subject: `New Job Application: ${jobTitle} at ${companyName}`,
+  html: `
+    <h2>New Job Application</h2>
+    <p><strong>Job:</strong> ${jobTitle} at ${companyName}</p>
+    <p><strong>Full Name:</strong> ${fullName}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Experience:</strong><br/>${experience}</p>
+    ${resumeUrl ? `<p><a href="${resumeUrl}">Download Resume</a></p>` : ''}
+  `,
+  attachments: resumeUrl
+    ? [
+        {
+          filename: `Resume - ${fullName}.pdf`,
+          path: resumeUrl,
+        },
+      ]
+    : [],
+};
+
 
     // Step 3: Send email
     await transporter.sendMail(mailOptions);
