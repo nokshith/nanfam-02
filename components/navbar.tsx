@@ -48,13 +48,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <motion.div whileHover={{ scale: 1.05 }}>
-  <img
-    src="/images/logo.png"
-    alt="Logo"
-    className="h-20 w-auto" // Adjust height/width as needed
-  />
-</motion.div>
-
+              <img
+                src={
+                  theme === 'light'
+                    ? pathname === '/' // replace with your landing route if not '/'
+                      ? (isScrolled ? '/images/logo2.png' : '/images/logo.png')
+                      : '/images/logo2.png'
+                    : '/images/logo.png'
+                }
+                alt="Logo"
+                className="h-20 w-auto"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}
