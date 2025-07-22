@@ -5,7 +5,8 @@ import axios from 'axios';
 import { X } from 'lucide-react';
 
 export interface ApplicationFormProps {
-  jobId: number;
+  //jobId: number; // Changed to string to match the job ID type in the context
+  jobId: string;
   jobTitle: string;
   companyName: string;
   onClose: () => void;
