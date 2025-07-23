@@ -19,7 +19,7 @@ export default function Jobs() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
+const res = await fetch(`http://localhost:1337/api/jobs`);
         const json = await res.json();
         const parsed = json.data.map((item: any) => ({
           id: item.id,
@@ -91,7 +91,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Find Your Dream Job</h1>
             <p className="text-xl md:text-2xl drop-shadow-md">
-              Discover exciting opportunities at leading telecom companies
+              Discover exciting opportunities at leading IT companies
             </p>
           </motion.div>
         </div>
@@ -150,7 +150,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
               {filteredJobs.length} Jobs Available
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              Find your next opportunity in the telecom industry
+              Find your next opportunity in IT industry
             </p>
           </div>
 

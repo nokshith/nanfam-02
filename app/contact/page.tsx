@@ -63,7 +63,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@namfam.com',
+      value: 'hello@nanfam.com',
       description: 'Send us an email anytime',
     },
     {
@@ -81,7 +81,7 @@ export default function Contact() {
     {
       icon: Linkedin,
       title: 'LinkedIn',
-      value: 'linkedin.com/company/namfam',
+      value: 'linkedin.com/company/nanfam',
       description: 'Connect with us professionally',
     },
   ];

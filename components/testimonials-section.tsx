@@ -11,28 +11,28 @@ export default function TestimonialsSection() {
     {
       name: 'Sarah Johnson',
       role: 'CTO, TechCorp Telecom',
-      content: 'Namfam found us the perfect senior developer in just 2 weeks. Their understanding of our technical requirements was exceptional.',
+      content: 'Nanfam found us the perfect senior developer in just 2 weeks. Their understanding of our technical requirements was exceptional.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
     },
     {
       name: 'Michael Chen',
       role: 'Software Engineer',
-      content: 'Thanks to Namfam, I landed my dream job at a leading telecom company. The process was smooth and professional.',
+      content: 'Thanks to Nanfam, I landed my dream job at a leading telecom company. The process was smooth and professional.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
     },
     {
       name: 'Emily Rodriguez',
       role: 'VP Engineering, ConnectTel',
-      content: 'The quality of candidates from Namfam is consistently high. They really understand what we need in our tech team.',
+      content: 'The quality of candidates from Nanfam is consistently high. They really understand what we need in our tech team.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
     },
     {
       name: 'David Park',
       role: 'DevOps Engineer',
-      content: 'Namfam helped me transition from a startup to a major telecom company. Their guidance throughout the process was invaluable.',
+      content: 'Nanfam helped me transition from a startup to a major telecom company. Their guidance throughout the process was invaluable.',
       rating: 5,
       avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2',
     },
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-500 max-w-3xl mx-auto">
-            Hear from the companies and professionals who have experienced success with Namfam
+            Hear from the companies and professionals who have experienced success with Nanfam
           </p>
         </motion.div>
 

@@ -55,7 +55,7 @@ export default function About() {
   ];
 
   const milestones = [
-    { year: '2018', event: 'Founded Namfam with a vision to revolutionize IT recruitment' },
+    { year: '2018', event: 'Founded Nanfam with a vision to revolutionize IT recruitment' },
     { year: '2019', event: 'Reached 100 successful placements in first year' },
     { year: '2020', event: 'Expanded to serve Fortune 500 telecom companies' },
     { year: '2021', event: 'Achieved 90%+ candidate retention rate' },
@@ -80,10 +80,10 @@ export default function About() {
             className="text-right max-w-xl"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-              About Namfam
+              About Nanfam
             </h1>
             <p className="text-xl md:text-2xl drop-shadow-md">
-              Connecting exceptional IT talent with leading telecom companies since 2018
+              Connecting exceptional IT talent with leading companies since 2018
             </p>
           </motion.div>
         </div>
@@ -103,7 +103,7 @@ export default function About() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                To bridge the gap between exceptional IT talent and innovative telecom companies, 
+                To bridge the gap between exceptional IT talent and innovative companies, 
                 creating lasting partnerships that drive technological advancement and career growth.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -122,12 +122,12 @@ export default function About() {
                 Our Vision
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                To become the most trusted and innovative recruitment partner in the telecom industry, 
+                To become the most trusted and innovative recruitment partner in the IT industry, 
                 known for our deep understanding of technology trends and exceptional service.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300">
                 We envision a future where every placement we make contributes to advancing 
-                telecommunications technology and enriching professional careers.
+                technology and enriching professional careers.
               </p>
             </motion.div>
           </div>

@@ -31,14 +31,14 @@ export default function HeroSection() {
           className="space-y-8"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Empowering Telecom with
+            Empowering Industry with
             <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Top IT Talent
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Connecting exceptional IT professionals with leading telecom companies across the United States
+            Connecting exceptional IT professionals with leading companies across the United States
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
