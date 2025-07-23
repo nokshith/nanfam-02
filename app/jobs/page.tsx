@@ -19,7 +19,7 @@ export default function Jobs() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-const res = await fetch(`http://localhost:1337/api/jobs`);
+const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
         const json = await res.json();
         const parsed = json.data.map((item: any) => ({
           id: item.id,
