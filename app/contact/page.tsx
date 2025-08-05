@@ -63,19 +63,19 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@nanfam.com',
+      value: 'nomail@nanfam.com',
       description: 'Send us an email anytime',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+1 (949) 701-5396',
       description: 'Call us during business hours',
     },
     {
       icon: MapPin,
       title: 'Office',
-      value: '123 Tech Street, San Francisco, CA 94105',
+      value: '8600 Freeport Pkwy Suite # 220, Irving, TX 75063, United States',
       description: 'Visit our headquarters',
     },
     {
@@ -230,7 +230,8 @@ export default function Contact() {
             <p className="text-gray-600 dark:text-gray-300 mb-8">Located in the heart of San Francisco's tech district</p>
             <div className="h-96 rounded-xl overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.101362125486!2d78.37401757533185!3d17.454861983443873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6bb7dec9cb882131%3A0xce527b77e8848a2c!2sVirtueServe%20R%26D%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752214935670!5m2!1sen!2sin"
+              // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.101362125486!2d78.37401757533185!3d17.454861983443873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6bb7dec9cb882131%3A0xce527b77e8848a2c!2sVirtueServe%20R%26D%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752214935670!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.0125646912347!2d-97.01686842418567!3d32.92426627360252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2975f4400001%3A0xe8d9994191f9d6ec!2sVirtueS!5e0!3m2!1sen!2sin!4v1754387751976!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

@@ -1,97 +1,91 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Users, Building, Briefcase, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function HeroSection() {
-  const stats = [
-    { icon: Users, label: 'Candidates Placed', value: '2,500+' },
-    { icon: Building, label: 'Partner Companies', value: '150+' },
-    { icon: Briefcase, label: 'Open Positions', value: '500+' },
-    { icon: TrendingUp, label: 'Success Rate', value: '92%' },
-  ];
+// Slides with images and recruitment content
+const slides = [
+  {
+    image: '/images/1629959752831.jpg',
+    heading: 'Hire Smarter, Grow Faster',
+    subtext: 'Streamline your recruitment process with AI-powered automation.',
+  },
+  {
+    image: '/images/copyright-ai-principles.png',
+    heading: 'Top Talent, Right On Time',
+    subtext: 'Connect with qualified candidates across industries in minutes.',
+  },
+  {
+    image: '/images/thumbs_b_c_86643fbba0f5616c87928ff12597bf44.jpg',
+    heading: 'Your Dream Job Awaits',
+    subtext: 'Explore thousands of job openings tailored to your skills.',
+  },
+];
+
+export default function BackgroundSlider() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/telpic1.jpg')",
-          filter: 'brightness(30%)'
-      }}
-      ></div>
-
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="relative w-full h-screen overflow-hidden">
+      <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
+          key={slides[current].image}
+          custom={direction}
+          initial={{ x: direction > 0 ? '100%' : '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: direction > 0 ? '-100%' : '100%', opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute top-0 left-0 w-full h-full"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Empowering Industry with
-            <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Top IT Talent
-            </span>
-          </h1>
+          {/* Background Image */}
+          <img
+            src={slides[current].image}
+            alt={`Slide ${current}`}
+            className="w-full h-full object-cover"
+          />
 
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Connecting exceptional IT professionals with leading companies across the United States
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/jobs">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Find Jobs
-              </motion.button>
-            </Link>
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold text-lg hover:bg-cyan-400 hover:text-white transition-all duration-300"
-              >
-                Hire Talent
-              </motion.button>
-            </Link>
+          {/* Overlay Content */}
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center px-6 backdrop-brightness-50">
+            <motion.h1
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold mb-4"
+            >
+              {slides[current].heading}
+            </motion.h1>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="text-lg md:text-xl max-w-2xl"
+            >
+              {slides[current].subtext}
+            </motion.p>
           </div>
         </motion.div>
+      </AnimatePresence>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-2">
-                <stat.icon className="w-8 h-8 text-cyan-400" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-              <div className="text-gray-300">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
+      {/* Optional: Dot indicators */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === current ? 'bg-white' : 'bg-gray-400'
+            }`}
+          />
+        ))}
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-        </div>
-      </motion.div>
-    </section>
+    </div>
   );
 }
