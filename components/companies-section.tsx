@@ -125,7 +125,12 @@ export default function CompaniesSection() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 cursor-pointer"
-            style={{ scrollBehavior: 'auto' }}
+            style={{ 
+              scrollBehavior: 'auto',
+              msOverflowStyle: 'none',
+              scrollbarWidth: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
           >
             {duplicatedCompanies.map((company, index) => (
               <motion.div
