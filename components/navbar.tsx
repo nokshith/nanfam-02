@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -30,7 +31,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Opportunities', href: '/jobs' },
+    { name: 'Jobs', href: '/jobs' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -104,7 +105,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+
+{/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
