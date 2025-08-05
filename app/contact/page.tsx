@@ -227,7 +227,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Visit Our Office</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8">Located in the heart of San Francisco's tech district</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">Located in the heart of Irving, Texas</p>
             <div className="h-96 rounded-xl overflow-hidden">
             <iframe
               // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.101362125486!2d78.37401757533185!3d17.454861983443873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6bb7dec9cb882131%3A0xce527b77e8848a2c!2sVirtueServe%20R%26D%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752214935670!5m2!1sen!2sin"
