@@ -67,22 +67,24 @@ export default function About() {
       <section
         className="py-40 bg-cover bg-center text-white relative"
         style={{
-          backgroundImage: "url('/images/benefits-large.webp')",
+          backgroundImage: "url('/images/pexels-divinetechygirl-1181622.jpg')",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-right max-w-xl"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-              About Nanfam
-            </h1>
-            <p className="text-xl md:text-2xl drop-shadow-md">
-              Connecting exceptional IT talent with leading companies since 2018
-            </p>
+                 {/* Background Color Overlay */}
+         <div className="absolute inset-0 bg-black/30 dark:bg-black/70"></div>
+                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center relative z-10 pt-40">
+           <motion.div
+             initial={{ opacity: 0, y: 50 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             className="text-center max-w-xl"
+           >
+                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl tracking-tight">
+               About Nanfam
+             </h1>
+             <p className="text-xl md:text-2xl text-white drop-shadow-xl font-light leading-relaxed">
+               Connecting exceptional IT talent with leading companies since 2018
+             </p>
           </motion.div>
         </div>
       </section>

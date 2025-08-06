@@ -115,9 +115,9 @@ export default function CompaniesSection() {
 
         {/* Hover Scrollable Container */}
         <div className="relative">
-          {/* Gradient Overlays for Scroll Effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white/10 dark:from-gray-900/10 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white/10 dark:from-gray-900/10 to-transparent z-10 pointer-events-none"></div>
+          {/* Solid Color Overlays for Scroll Effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-white/10 dark:bg-gray-900/10 z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-white/10 dark:bg-gray-900/10 z-10 pointer-events-none"></div>
           
           {/* Hover-Triggered Scrolling Companies */}
           <div 
