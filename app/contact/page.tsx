@@ -125,7 +125,7 @@ export default function Contact() {
 
 
       {/* Contact Form and Info */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-white dark:bg-gray-900">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
     
     {/* Contact Form */}
@@ -133,7 +133,7 @@ export default function Contact() {
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-8 rounded-lg shadow-lg"
+      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 rounded-lg shadow-lg"
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Send a Message</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -201,7 +201,7 @@ export default function Contact() {
       {contactInfo.map((info, index) => (
         <div
           key={index}
-          className="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow"
+          className="flex items-start gap-4 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow"
         >
           <div className="p-2 bg-blue-500 text-white rounded">
             {<info.icon className="w-6 h-6" />}

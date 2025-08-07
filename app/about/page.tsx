@@ -90,7 +90,8 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white/10">
+     <section className="py-20 bg-[#000f3D]">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
@@ -129,7 +130,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -155,7 +156,7 @@ export default function About() {
                 whileHover={{ scale: 1.05 }}
                 className="group relative p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
                             border border-gray-300 dark:border-gray-600 
-                            bg-white dark:bg-gray-950"
+                            bg-white dark:bg-gray-800"
               >
                 <div
                   className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl"
@@ -179,7 +180,7 @@ export default function About() {
       </section>
 
       {/* Team Section (Updated to 3 Members) */}
-      <section className="py-20 bg-white dark:bg-gray-950">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -203,7 +204,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="relative group p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg transition duration-300"
+                className="relative group p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg transition duration-300"
               >
                 <div className="relative mb-6">
                   <img
@@ -229,7 +230,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
+      <section className="py-2 bg-[#000f3D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -246,30 +247,31 @@ export default function About() {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
+  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-500"></div>
 
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-              >
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className="p-6 rounded-lg shadow-lg bg-white dark:bg-[#ffffff1a] hover:bg-white transition-none">
-                    <div className="text-2xl font-bold text-blue-600 dark:text-cyan-400 mb-2">
-                      {milestone.year}
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {milestone.event}
-                    </p>
-                  </div>
-                </div>
-                <div className="w-6 h-6 bg-blue-600 rounded-full border-4 border-white dark:border-gray-800 z-10"></div>
-              </motion.div>
-            ))}
+  {milestones.map((milestone, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+    >
+      <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+        <div className="p-6 rounded-lg shadow-lg bg-[#192750] hover:bg-[#192750] transition-none">
+          <div className="text-2xl font-bold text-blue-600 dark:text-cyan-400 mb-2">
+            {milestone.year}
           </div>
+          <p className="text-gray-300">
+            {milestone.event}
+          </p>
+        </div>
+      </div>
+      <div className="w-6 h-6 bg-blue-600 rounded-full border-4 border-white dark:border-gray-800 z-10"></div>
+    </motion.div>
+  ))}
+</div>
+
         </div>
       </section>
     </main>

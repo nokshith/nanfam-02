@@ -60,8 +60,8 @@ export default function Navbar() {
                       : '/images/logo2.png'
                     : '/images/logo.png'
                 }
-                alt="Logo"
-                className="h-12 w-auto transition-all duration-300"
+                                 alt="Logo"
+                className="h-20 w-auto transition-all duration-300"
               />
             </div>
           </Link>

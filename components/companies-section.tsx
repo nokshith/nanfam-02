@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function CompaniesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
-  
+
   const companies = [
     { name: 'Verizon' },
     { name: 'AT&T' },
@@ -61,7 +61,6 @@ export default function CompaniesSection() {
     { name: 'U-verse Business' },
   ];
 
-  // Duplicate companies for seamless loop
   const duplicatedCompanies = [...companies, ...companies];
 
   useEffect(() => {
@@ -70,17 +69,14 @@ export default function CompaniesSection() {
 
     let animationId: number;
     let scrollPosition = 0;
-    const scrollSpeed = 2; // pixels per frame
+    const scrollSpeed = 2;
 
     const animateScroll = () => {
       if (isHovering) {
         scrollPosition += scrollSpeed;
-        
-        // Reset to beginning when reaching halfway point for seamless loop
         if (scrollPosition >= scrollContainer.scrollWidth / 2) {
           scrollPosition = 0;
         }
-        
         scrollContainer.scrollLeft = scrollPosition;
       }
       animationId = requestAnimationFrame(animateScroll);
@@ -96,7 +92,12 @@ export default function CompaniesSection() {
   }, [isHovering]);
 
   return (
-    <section className="py-20 bg-white/10 dark:bg-gray-900/10 transition-all duration-300">
+    <section
+      className="py-20 transition-all duration-300"
+      style={{
+        background: 'linear-gradient(135deg, #002285 0%, #2d7db6 100%)',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -105,31 +106,27 @@ export default function CompaniesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             We partner with the most respected names in telecommunications
           </p>
         </motion.div>
 
-        {/* Hover Scrollable Container */}
+        {/* Scrollable Container */}
         <div className="relative">
-          {/* Solid Color Overlays for Scroll Effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-white/10 dark:bg-gray-900/10 z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-white/10 dark:bg-gray-900/10 z-10 pointer-events-none"></div>
-          
-          {/* Hover-Triggered Scrolling Companies */}
-          <div 
+          {/* Removed left and right diagonal covers */}
+          <div
             ref={scrollRef}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 cursor-pointer"
-            style={{ 
+            style={{
               scrollBehavior: 'auto',
               msOverflowStyle: 'none',
               scrollbarWidth: 'none',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
             }}
           >
             {duplicatedCompanies.map((company, index) => (
@@ -138,8 +135,8 @@ export default function CompaniesSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-gray-100 dark:bg-white/10 rounded-lg backdrop-blur-sm text-black dark:text-white font-semibold text-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-400 transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.02 }}
+                className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-white/20 hover:border-blue-300 transition-all duration-300"
               >
                 {company.name}
               </motion.div>

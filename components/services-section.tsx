@@ -28,7 +28,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-blue-50 dark:bg-gray-900 transition-all duration-300">
+    <section className="py-20" style={{ background: '#000F3D' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -37,7 +37,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold uppercase tracking-wider mb-2 text-gray-900 dark:text-white">
+          <h2 className="text-4xl font-extrabold uppercase tracking-wider mb-2 text-white dark:text-gray-100">
             END-TO-END BUSINESS CONSULTING SERVICES
           </h2>
         </motion.div>
@@ -51,7 +51,8 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               whileHover={{ scale: 1.03 }}
-              className="relative flex flex-col h-full p-0 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-400"
+              className="relative flex flex-col h-full p-0 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200/20 hover:border-blue-300 overflow-hidden"
+              style={{ background: '#192750' }}
             >
               <img
                 src={service.image}
@@ -59,8 +60,12 @@ export default function ServicesSection() {
                 className="rounded-t-2xl w-full h-48 object-cover"
               />
               <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
-                <p className="mb-6 flex-1 text-gray-700 dark:text-gray-300">{service.description}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-white">
+                  {service.title}
+                </h3>
+                <p className="mb-6 flex-1 text-gray-300">
+                  {service.description}
+                </p>
               </div>
             </motion.div>
           ))}

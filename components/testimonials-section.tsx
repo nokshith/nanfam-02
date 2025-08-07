@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-black text-white">
+    <section className="py-20" style={{ background: '#000F3D' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,10 +63,10 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-500 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Hear from the companies and professionals who have experienced success with Nanfam
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-blue-50 dark:bg-gray-900 rounded-2xl p-8 md:p-12 shadow-lg"
+              className="bg-white/10 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-200/20"
             >
               <div className="flex items-center justify-center mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                 ))}
               </div>
               
-              <blockquote className="text-lg md:text-xl text-gray-700 dark:text-gray-200 text-center mb-8 italic">
+              <blockquote className="text-lg md:text-xl text-gray-200 text-center mb-8 italic">
                 "{testimonials[currentIndex].content}"
               </blockquote>
               
@@ -98,10 +98,10 @@ export default function TestimonialsSection() {
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900 dark:text-white">
+                  <div className="font-semibold text-white">
                     {testimonials[currentIndex].name}
                   </div>
-                  <div className="text-gray-600 dark:text-gray-300">
+                  <div className="text-gray-300">
                     {testimonials[currentIndex].role}
                   </div>
                 </div>
@@ -111,16 +111,16 @@ export default function TestimonialsSection() {
 
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-white/10 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-white/10 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'
+                index === currentIndex ? 'bg-blue-500' : 'bg-gray-600'
               }`}
             />
           ))}
