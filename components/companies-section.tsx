@@ -93,10 +93,7 @@ export default function CompaniesSection() {
 
   return (
     <section
-      className="py-20 transition-all duration-300"
-      style={{
-        background: 'linear-gradient(135deg, #002285 0%, #2d7db6 100%)',
-      }}
+      className="py-20 transition-all duration-300 bg-slate-100 dark:bg-slate-950"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -106,10 +103,10 @@ export default function CompaniesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We partner with the most respected names in telecommunications
           </p>
         </motion.div>
@@ -136,7 +133,7 @@ export default function CompaniesSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.4, delay: index * 0.02 }}
-                className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-white/20 hover:border-blue-300 transition-all duration-300"
+                className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-gray-800 dark:bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-blue-300 transition-all duration-300"
               >
                 {company.name}
               </motion.div>

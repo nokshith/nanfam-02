@@ -79,7 +79,8 @@ export default function About() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center max-w-xl w-full"
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 text-center max-w-xl w-full"
+            style={{ top: 'calc(25% + 10px)' }}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl tracking-tight">
               About Nanfam
@@ -107,7 +108,9 @@ export default function About() {
               <p className="text-lg text-gray-300 mb-6">
                 To bridge the gap between exceptional IT talent and innovative
                 companies, creating lasting partnerships that drive technological
-                advancement and career growth.
+                advancement and career growth. We strive to understand the unique
+                needs of both employers and candidates, ensuring perfect matches
+                that benefit all parties involved in the recruitment process.
               </p>
             </motion.div>
 
@@ -123,7 +126,9 @@ export default function About() {
               <p className="text-lg text-gray-300 mb-6">
                 To become the most trusted and innovative recruitment partner in
                 the IT industry, known for our deep understanding of technology
-                trends and exceptional service.
+                trends and exceptional service. We envision a future where every
+                organization has access to the perfect talent, and every professional
+                finds their ideal career path through our comprehensive solutions.
               </p>
             </motion.div>
           </div>
@@ -201,11 +206,6 @@ export default function About() {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="relative group p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg transition duration-300 text-center"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 mx-auto rounded-full object-cover mb-6 border-4 border-blue-500/50 group-hover:border-cyan-400 transition duration-300"
-                />
                 <h3 className="text-xl font-semibold text-white">
                   {member.name}
                 </h3>
