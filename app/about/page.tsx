@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -32,7 +31,6 @@ export default function About() {
     },
   ];
 
-  // Updated team array without images
   const team = [
     {
       name: 'Chaitanya Nanduri',
@@ -55,6 +53,7 @@ export default function About() {
     { year: '2021', event: 'Achieved 90%+ candidate retention rate' },
     { year: '2022', event: 'Opened offices in 5 major tech hubs' },
     { year: '2023', event: 'Placed 1,000+ professionals in dream roles' },
+    { year: '2024', event: 'Recognized as "Top Tech Recruiter - Hyderabad"' },
   ];
 
   return (
@@ -131,8 +130,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values - Updated Background */}
-      <section className="py-20 bg-[#05112C]">
+      {/* Values */}
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -159,14 +158,6 @@ export default function About() {
                 className="group relative p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
                                  border border-gray-700 bg-[#192750]"
               >
-                <div
-                  className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(to right, var(--tw-gradient-stops))',
-                  }}
-                ></div>
-
                 <div className="inline-flex p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl mb-6">
                   <value.icon className="w-6 h-6 text-white" />
                 </div>
@@ -181,8 +172,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section - Updated Background & No Photos */}
-      <section className="py-20 bg-[#05112C]">
+      {/* Team Section */}
+      <section className="py-20 bg-sky-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
