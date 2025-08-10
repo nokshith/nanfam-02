@@ -6,17 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Slides with images and recruitment content
 const slides = [
   {
-    image: '/images/1629959752831.jpg',
+    image: '/images/image-12.png',
     heading: 'Hire Smarter, Grow Faster',
     subtext: 'Streamline your recruitment process with AI-powered automation.',
   },
   {
-    image: '/images/copyright-ai-principles.png',
+    image: '/images/image-2.png',
     heading: 'Top Talent, Right On Time',
     subtext: 'Connect with qualified candidates across industries in minutes.',
   },
   {
-    image: '/images/thumbs_b_c_86643fbba0f5616c87928ff12597bf44.jpg',
+    image: '/images/image-3.png',
     heading: 'Your Dream Job Awaits',
     subtext: 'Explore thousands of job openings tailored to your skills.',
   },
@@ -50,11 +50,12 @@ export default function BackgroundSlider() {
           <img
             src={slides[current].image}
             alt={`Slide ${current}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
 
           {/* Overlay Content */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center px-6 backdrop-brightness-50">
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center px-6 backdrop-brightness-50 pt-20">
+            {/* pt-20 ensures text starts below navbar height */}
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -75,7 +76,7 @@ export default function BackgroundSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Optional: Dot indicators */}
+      {/* Dot indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <div

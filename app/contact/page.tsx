@@ -106,21 +106,22 @@ export default function Contact() {
         </div>
 
         {/* Text Content Aligned Right */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-end">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-right max-w-xl"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-              Let&apos;s Connect
-            </h1>
-            <p className="text-xl md:text-2xl drop-shadow-md">
-              Ready to find your next great hire or dream job? We&apos;re here to help.
-            </p>
-          </motion.div>
-        </div>
+       {/* Text Content Aligned Right Bottom */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-end">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-right max-w-xl relative top-40"
+  >
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+      Let's Connect
+    </h1>
+    <p className="text-xl md:text-2xl drop-shadow-md">
+      Ready to find your next great hire or dream job? We're here to help.
+    </p>
+  </motion.div>
+</div>
       </section>
 
 
