@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, MapPin, Clock, DollarSign, Users, CalendarDays, Filter } from 'lucide-react';
+import {
+  Search,
+  MapPin,
+  Clock,
+  DollarSign,
+  Users,
+  CalendarDays,
+  Filter,
+  X,
+} from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 const ApplicationForm = dynamic(() => import('./components/ApplicationForm'), { ssr: false });
@@ -15,11 +24,12 @@ export default function Jobs() {
   const [floatingElements, setFloatingElements] = useState<JSX.Element[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState<any>(null);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
         const json = await res.json();
         const parsed = json.data.map((item: any) => ({
           id: item.id,
@@ -77,29 +87,46 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
 
   return (
     <main className="pt-16">
-      <section
-        className="py-40 bg-cover bg-center text-white relative overflow-hidden"
-        style={{ backgroundImage: "url('/images/immm.webp')" }}
-      >
-        <div className="absolute inset-0 overflow-hidden">{floatingElements}</div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-end">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-right max-w-xl"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Find Your Dream Job</h1>
-            <p className="text-xl md:text-2xl drop-shadow-md">
-              Discover exciting opportunities at leading IT companies
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      {/* Hero Section */}
+<section className="relative w-full h-screen bg-black overflow-hidden">
+  <img
+    src="/images/immm.png"
+    alt="Find Your Dream Job"
+    className="w-full h-full object-cover"
+  />
 
+  {/* Floating Effects */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {floatingElements}
+  </div>
+
+  {/* Text Overlay */}
+  <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-16 text-left z-10">
+    <motion.h1
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg max-w-2xl"
+    >
+      Find Your Dream Job
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="text-white text-lg md:text-2xl mt-4 drop-shadow-md max-w-xl"
+    >
+      Discover exciting opportunities at leading IT companies
+    </motion.p>
+  </div>
+</section>
+
+
+      {/* Jobs Section */}
       <section className="py-20 bg-slate-100 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Search and Filter Section */}
+          {/* Search & Filter */}
           <div className="mb-12">
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -144,7 +171,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
             </div>
           </div>
 
-                    {/* Jobs Listing Section */}
+          {/* Jobs Listing */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               {filteredJobs.length} Jobs Available
@@ -212,6 +239,7 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
         </div>
       </section>
 
+      {/* Application Form Modal */}
       {showForm && selectedJob && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl max-w-xl w-full shadow-lg relative">
@@ -220,6 +248,30 @@ const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/jobs`);
               jobTitle={selectedJob.title}
               companyName={selectedJob.company}
               onClose={() => setShowForm(false)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Image Modal */}
+      {isImageModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <div className="relative">
+            <button
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors z-10"
+              aria-label="Close image view"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="/images/immm.png"
+              alt="Find Your Dream Job"
+              className="max-w-screen max-h-screen object-contain"
+              onClick={(e) => e.stopPropagation()}
             />
           </div>
         </div>
