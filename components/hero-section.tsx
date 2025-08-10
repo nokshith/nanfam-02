@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
   {
-    image: '/images/image-12.png',
+    image: '/images/image-1234.png',
     heading: 'Hire Smarter, Grow Faster',
     subtext: 'Streamline your recruitment process with AI-powered automation.',
   },
