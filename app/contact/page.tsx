@@ -92,7 +92,7 @@ export default function Contact() {
       <section
         className="py-40 bg-cover bg-center text-white relative overflow-hidden"
         style={{
-          backgroundImage: "url('/images/technology-large.webp')",
+          backgroundImage: "url('/images/Gemini_Generated_Image_va7wgava7wgava7w.png')",
         }}
       >
         {/* SVG Pattern Overlay */}
