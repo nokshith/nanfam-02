@@ -696,6 +696,9 @@ video {
 .top-4 {
   top: 1rem;
 }
+.top-40 {
+  top: 10rem;
+}
 .top-\[1px\] {
   top: 1px;
 }
@@ -707,21 +710,6 @@ video {
 }
 .top-full {
   top: 100%;
-}
-.top-8 {
-  top: 2rem;
-}
-.top-16 {
-  top: 4rem;
-}
-.top-24 {
-  top: 6rem;
-}
-.top-32 {
-  top: 8rem;
-}
-.top-40 {
-  top: 10rem;
 }
 .z-10 {
   z-index: 10;
@@ -823,9 +811,6 @@ video {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mt-20 {
-  margin-top: 5rem;
 }
 .block {
   display: block;
@@ -931,12 +916,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-\[120vh\] {
-  height: 120vh;
-}
-.h-\[calc\(100vh-80px\)\] {
-  height: calc(100vh - 80px);
 }
 .max-h-96 {
   max-height: 24rem;
@@ -1564,10 +1543,6 @@ video {
 .fill-current {
   fill: currentColor;
 }
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1575,10 +1550,6 @@ video {
 .object-center {
   -o-object-position: center;
      object-position: center;
-}
-.object-\[80\%\] {
-  -o-object-position: 80%;
-     object-position: 80%;
 }
 .p-0 {
   padding: 0px;
@@ -1714,14 +1685,14 @@ video {
 .pt-16 {
   padding-top: 4rem;
 }
+.pt-20 {
+  padding-top: 5rem;
+}
 .pt-3 {
   padding-top: 0.75rem;
 }
 .pt-4 {
   padding-top: 1rem;
-}
-.pt-20 {
-  padding-top: 5rem;
 }
 .text-left {
   text-align: left;
@@ -1768,10 +1739,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
