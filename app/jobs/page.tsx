@@ -88,40 +88,41 @@ export default function Jobs() {
   return (
     <main className="pt-16">
       {/* Hero Section */}
-      {/* Hero Section */}
-<section className="relative w-full h-screen bg-black overflow-hidden">
-  <img
-    src="/images/immm.png"
-    alt="Find Your Dream Job"
-    className="w-full h-full object-cover"
-  />
+      <section className="relative w-full h-screen bg-black overflow-hidden">
+        <img
+          src="/images/immm.png"
+          alt="Find Your Dream Job"
+          className="w-full h-full object-cover"
+        />
 
-  {/* Floating Effects */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {floatingElements}
-  </div>
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black opacity-60"></div>
 
-  {/* Text Overlay */}
-  <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-16 text-left z-10">
-    <motion.h1
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg max-w-2xl"
-    >
-      Find Your Dream Job
-    </motion.h1>
-    <motion.p
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="text-white text-lg md:text-2xl mt-4 drop-shadow-md max-w-xl"
-    >
-      Discover exciting opportunities at leading IT companies
-    </motion.p>
-  </div>
-</section>
+        {/* Floating Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {floatingElements}
+        </div>
 
+        {/* Text Overlay */}
+        <div className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-16 text-left z-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg max-w-2xl"
+          >
+            Find Your Dream Job
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-white text-lg md:text-2xl mt-4 drop-shadow-md max-w-xl"
+          >
+            Discover exciting opportunities at leading IT companies
+          </motion.p>
+        </div>
+      </section>
 
       {/* Jobs Section */}
       <section className="py-20 bg-slate-100 dark:bg-slate-950">
