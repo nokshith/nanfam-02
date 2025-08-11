@@ -71,7 +71,7 @@ export default function About() {
           backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.webp')",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative flex justify-center items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
