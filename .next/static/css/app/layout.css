@@ -755,6 +755,9 @@ video {
 .-ml-4 {
   margin-left: -1rem;
 }
+.-ml-5 {
+  margin-left: -1.25rem;
+}
 .-mt-4 {
   margin-top: -1rem;
 }
@@ -812,11 +815,11 @@ video {
 .mt-auto {
   margin-top: auto;
 }
-.-ml-5 {
-  margin-left: -1.25rem;
-}
 .block {
   display: block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -1158,6 +1161,9 @@ video {
 .items-stretch {
   align-items: stretch;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-end {
   justify-content: flex-end;
 }
@@ -1493,6 +1499,12 @@ video {
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
 }
+.bg-black\/40 {
+  background-color: rgb(0 0 0 / 0.4);
+}
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1703,6 +1715,24 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pb-24 {
+  padding-bottom: 6rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 .text-left {
   text-align: left;

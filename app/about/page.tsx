@@ -72,15 +72,14 @@ export default function About() {
           backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.png')",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
-          {/* This div is now positioned absolutely within the container */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        {/* UPDATED: Text is positioned lower with pb-10 */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative flex justify-center items-end pb-5">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 text-center max-w-xl w-full"
-            style={{ top: 'calc(25% + 10px)' }}
+            className="text-center max-w-xl w-full"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl tracking-tight">
               About Nanfam
