@@ -5,17 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
   {
-    image: '/images/image-1234.png',
+    image: '/images/image-1234.webp',
     heading: 'Hire Smarter, Grow Faster',
     subtext: 'Streamline your recruitment process with AI-powered automation.',
   },
   {
-    image: '/images/image-2.png',
+    image: '/images/image-2.webp',
     heading: 'Top Talent, Right On Time',
     subtext: 'Connect with qualified candidates across industries in minutes.',
   },
   {
-    image: '/images/image-3.png',
+    image: '/images/image-3.webp',
     heading: 'Your Dream Job Awaits',
     subtext: 'Explore thousands of job openings tailored to your skills.',
   },

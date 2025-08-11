@@ -90,7 +90,7 @@ export default function Jobs() {
       {/* Hero Section */}
       <section className="relative w-full h-screen bg-black overflow-hidden">
         <img
-          src="/images/immm.png"
+          src="/images/immm.webp"
           alt="Find Your Dream Job"
           className="w-full h-full object-cover"
         />

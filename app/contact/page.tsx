@@ -95,7 +95,7 @@ export default function Contact() {
         className="relative py-40 bg-cover bg-center text-white overflow-hidden flex items-start justify-center"
         style={{
           backgroundImage:
-            "url('/images/Gemini_Generated_Image_va7wgava7wgava7w.png')",
+            "url('/images/Gemini_Generated_Image_va7wgava7wgava7w.webp')",
         }}
       >
         {/* Black overlay */}

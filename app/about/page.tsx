@@ -68,7 +68,7 @@ export default function About() {
       <section
         className="h-[90vh] bg-cover bg-center text-white relative"
         style={{
-          backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.png')",
+          backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.webp')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
