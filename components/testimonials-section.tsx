@@ -92,11 +92,11 @@ export default function TestimonialsSection() {
               </blockquote>
               
               <div className="flex items-center justify-center space-x-4">
-                <img
+                {/* <img
                   src={testimonials[currentIndex].avatar}
                   alt={testimonials[currentIndex].name}
                   className="w-16 h-16 rounded-full object-cover"
-                />
+                /> */}
                 <div className="text-center">
                   <div className="font-semibold text-white">
                     {testimonials[currentIndex].name}

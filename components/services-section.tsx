@@ -37,8 +37,8 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-extrabold uppercase tracking-wider mb-2 text-white dark:text-gray-100">
-            END-TO-END BUSINESS CONSULTING SERVICES
+          <h2 className="text-4xl font-bold  tracking-wider mb-2 text-white dark:text-gray-100">
+            End-To-End Business Consulting Services
           </h2>
         </motion.div>
 
