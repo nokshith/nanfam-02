@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -65,16 +64,15 @@ export default function About() {
 
   return (
     <main className="pt-16">
-      {/* Hero Section (First Section - Dark Theme via Overlay) */}
+      {/* Hero Section (Centered Text) */}
       <section
-        className="h-[70vh] bg-cover bg-center text-white relative"
+        className="h-[90vh] bg-cover bg-center text-white relative"
         style={{
           backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.png')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        {/* UPDATED: Text is positioned lower with pb-10 */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative flex justify-center items-end pb-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative flex justify-center items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,7 +89,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision (Second Section - Rich Blue) */}
+      {/* Mission & Vision */}
       <section className="py-20 bg-[#000f3D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -134,7 +132,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values (Third Section - Light Background for Contrast) */}
+      {/* Values */}
       <section className="py-20 bg-slate-100 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -177,7 +175,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section (Fourth Section - Complementary Dark Navy) */}
+      {/* Team */}
       <section className="py-20 bg-[#0A192F]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -220,7 +218,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline (Last Section - Rich Blue) */}
+      {/* Timeline */}
       <section className="py-20 bg-[#000f3D]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
