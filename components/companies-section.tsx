@@ -93,7 +93,7 @@ export default function CompaniesSection() {
                 className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-gray-800 dark:bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-blue-300 transition-all duration-300"
               >
                  <img 
-  src={company.logo} 
+  // src={company.logo} 
   alt={company.name} 
   className="h-full w-full object-fill"/> 
               </motion.div>
