@@ -24,28 +24,23 @@ const slides = [
 export default function BackgroundSlider() {
   const [current, setCurrent] = useState(0);
 
-  // This effect sets up a consistent 5-second interval timer.
   useEffect(() => {
     const interval = setInterval(() => {
-      // Use the functional update form to get the most recent state
       setCurrent((prevCurrent) => (prevCurrent + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
-    // Clear the interval when the component is unmounted
     return () => clearInterval(interval);
-  }, []); // The empty dependency array [] ensures this runs only once.
+  }, []);
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <AnimatePresence>
         <motion.div
-          // Use the index as the key. When it changes, AnimatePresence
-          // handles the exit of the old slide and entry of the new one.
           key={current}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }} // A slightly longer fade feels smoother
+          transition={{ duration: 1.5 }}
           className="absolute top-0 left-0 w-full h-full"
         >
           <img
@@ -55,7 +50,6 @@ export default function BackgroundSlider() {
           />
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center px-6 backdrop-brightness-50 pt-20">
             <motion.h1
-              // Add a key to the text to make it re-animate on each slide change
               key={slides[current].heading}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -65,7 +59,6 @@ export default function BackgroundSlider() {
               {slides[current].heading}
             </motion.h1>
             <motion.p
-              // Add a key to the text to make it re-animate on each slide change
               key={slides[current].subtext}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -78,14 +71,16 @@ export default function BackgroundSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Dot indicators */}
+      {/* Clickable Dot indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
-          <div
+          <button
             key={index}
+            onClick={() => setCurrent(index)}
             className={`w-3 h-3 rounded-full transition-colors duration-300 ${
               index === current ? 'bg-white' : 'bg-gray-400'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
