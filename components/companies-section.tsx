@@ -7,16 +7,35 @@ export default function CompaniesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 
+  // Updated company list with Wipro added.
   const companies = [
-    { name: 'Verizon' },
-    { name: 'AT&T',  },
-    { name: 'T-Mobile',  },
-    { name: 'Sprint',  },
-    { name: 'Comcast',  },
-    { name: 'Charter', },
-    { name: 'Cox Communications',  },
-    { name: 'CenturyLink',  },
-    { name: 'Ascent Innovations', }, 
+    { name: 'Coca-Cola', logo: '/images/cocacola.png' },
+    // { name: 'TCS', logo: '/images/tcs.png' }, // Corrected logo path
+    // { name: 'Mindtree', logo: 'https://www.vectorlogo.zone/logos/mindtree/mindtree-ar21.svg' },
+    // { name: 'Ernst & Young', logo: 'https://www.vectorlogo.zone/logos/ey/ey-ar21.svg' },
+    // { name: 'Accenture', logo: 'https://www.vectorlogo.zone/logos/accenture/accenture-ar21.svg' },
+    // { name: 'Verizon', logo: 'https://www.vectorlogo.zone/logos/verizon/verizon-ar21.svg' },
+    // { name: 'AT&T', logo: 'https://www.vectorlogo.zone/logos/att/att-ar21.svg' },
+    // { name: 'T-Mobile', logo: 'https://cdn.worldvectorlogo.com/logos/t-mobile-5.svg' },
+    // { name: 'Comcast', logo: 'https://www.vectorlogo.zone/logos/comcast/comcast-ar21.svg' },
+    { name: 'Intel', logo: 'https://www.vectorlogo.zone/logos/intel/intel-ar21.svg' },
+    // { name: 'Mastercard', logo: 'https://www.vectorlogo.zone/logos/mastercard/mastercard-ar21.svg' },
+    { name: 'PayPal', logo: 'https://www.vectorlogo.zone/logos/paypal/paypal-ar21.svg' },
+    // { name: 'Wipro', logo: 'https://www.vectorlogo.zone/logos/wipro/wipro-ar21.svg' },
+    // { name: 'Adobe', logo: 'https://www.vectorlogo.zone/logos/adobe/adobe-ar21.svg' },
+    { name: 'Nvidia', logo: 'https://www.vectorlogo.zone/logos/nvidia/nvidia-ar21.svg' },
+    { name: 'Oracle', logo: 'https://www.vectorlogo.zone/logos/oracle/oracle-ar21.svg' },
+    // { name: 'Visa', logo: 'https://www.vectorlogo.zone/logos/visa/visa-ar21.svg' },
+        { name: 'IBM', logo: 'https://www.vectorlogo.zone/logos/ibm/ibm-ar21.svg' },
+            { name: 'Salesforce', logo: 'https://www.vectorlogo.zone/logos/salesforce/salesforce-ar21.svg' },
+                { name: 'SAP', logo: 'https://www.vectorlogo.zone/logos/sap/sap-ar21.svg' },
+                    { name: 'Microsoft', logo: 'https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg' },
+
+
+  
+
+
+
   ];
 
   const duplicatedCompanies = [...companies, ...companies];
@@ -26,16 +45,12 @@ export default function CompaniesSection() {
     if (!scrollContainer) return;
 
     let animationId: number;
-    let scrollPosition = 0;
-    const scrollSpeed = 2;
-
     const animateScroll = () => {
-      if (isHovering) {
-        scrollPosition += scrollSpeed;
-        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-          scrollPosition = 0;
+      if (!isHovering) {
+        scrollContainer.scrollLeft += 1;
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
         }
-        scrollContainer.scrollLeft = scrollPosition;
       }
       animationId = requestAnimationFrame(animateScroll);
     };
@@ -50,9 +65,7 @@ export default function CompaniesSection() {
   }, [isHovering]);
 
   return (
-    <section
-      className="py-20 transition-all duration-300 bg-slate-100 dark:bg-slate-950"
-    >
+    <section className="py-20 transition-all duration-300 bg-slate-100 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -65,7 +78,7 @@ export default function CompaniesSection() {
             Trusted by Industry Leaders
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We partner with the most respected names in telecommunications
+            We partner with the most respected names in the industry
           </p>
         </motion.div>
 
@@ -75,32 +88,36 @@ export default function CompaniesSection() {
             ref={scrollRef}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 cursor-pointer"
-            style={{
-              scrollBehavior: 'auto',
-              msOverflowStyle: 'none',
-              scrollbarWidth: 'none',
-              WebkitOverflowScrolling: 'touch',
-            }}
+            className="flex gap-8 overflow-x-auto no-scrollbar pb-4"
           >
             {duplicatedCompanies.map((company, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, delay: index * 0.02 }}
-                className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-gray-800 dark:bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-blue-300 transition-all duration-300"
+                transition={{ duration: 0.3 }}
+                className="flex-shrink-0 flex items-center justify-center h-24 w-48 bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md"
               >
-                 <img 
-  // src={company.logo} 
-  alt={company.name} 
-  className="h-full w-full object-fill"/> 
+                <img
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  className="h-full w-full object-contain"
+                />
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Self-contained CSS to hide the scrollbar */}
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }
+      `}</style>
     </section>
   );
 }

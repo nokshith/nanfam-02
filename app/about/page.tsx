@@ -66,9 +66,7 @@ export default function About() {
     <main className="pt-16">
       {/* Hero Section (Centered Text) */}
       <section
-        // --- THIS IS THE ONLY LINE THAT CHANGED ---
-        // I changed h-[90vh] to h-[70vh] to make the section smaller.
-        className="h-[70vh] bg-cover bg-center text-white relative"
+        className="h-[92vh] bg-cover bg-center text-white relative"
         style={{
           backgroundImage: "url('/images/Gemini_Generated_Image_dc9ubmdc9ubmdc9u.webp')",
         }}
@@ -107,7 +105,7 @@ export default function About() {
               <p className="text-lg text-gray-300 mb-6">
                 To bridge the gap between exceptional IT talent and innovative
                 companies, creating lasting partnerships that drive technological
-                advancement and career growth. 
+                advancement and career growth.
               </p>
             </motion.div>
 
@@ -123,7 +121,7 @@ export default function About() {
               <p className="text-lg text-gray-300 mb-6">
                 To become the most trusted and innovative recruitment partner in
                 the IT industry, known for our deep understanding of technology
-                trends and exceptional service. 
+                trends and exceptional service.
               </p>
             </motion.div>
           </div>

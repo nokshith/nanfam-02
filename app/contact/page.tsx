@@ -61,12 +61,7 @@ export default function Contact() {
     });
   };
 
-  const contactInfo: {
-    icon: React.ElementType;
-    title: string;
-    value: string;
-    description: string;
-  }[] = [
+  const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
@@ -97,7 +92,7 @@ export default function Contact() {
     <main className="pt-16">
       {/* Hero Section */}
       <section
-        className="relative min-h-[65vh] bg-cover bg-center text-white overflow-hidden flex items-center justify-center"
+        className="relative h-[92vh] bg-cover bg-center text-white overflow-hidden flex items-start justify-center"
         style={{
           backgroundImage:
             "url('/images/Gemini_Generated_Image_va7wgava7wgava7w.webp')",
@@ -109,7 +104,7 @@ export default function Contact() {
         {/* SVG Pattern Overlay */}
         <div className="absolute inset-0 z-10">
           <div
-            className={`absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")] opacity-20`}
+            className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.05&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"
           ></div>
         </div>
 
@@ -123,7 +118,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-20 max-w-xl px-4 text-center"
+          className="relative z-20 max-w-xl px-4 text-center mt-80"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             Let's Connect
@@ -217,7 +212,7 @@ export default function Contact() {
                 className="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow"
               >
                 <div className="p-2 bg-blue-500 text-white rounded">
-                  <info.icon className="w-6 h-6" />
+                  {<info.icon className="w-6 h-6" />}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -254,7 +249,7 @@ export default function Contact() {
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen={true}
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
