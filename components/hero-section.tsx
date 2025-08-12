@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react'; // useEffect is no longer needed
 import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
@@ -24,13 +24,7 @@ const slides = [
 export default function BackgroundSlider() {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prevCurrent) => (prevCurrent + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // The useEffect hook that caused the auto-scroll has been removed.
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">

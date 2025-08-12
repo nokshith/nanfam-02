@@ -15,14 +15,14 @@ export default function ServicesSection() {
       image: '/images/22_2_11zon.jpg',
       title: 'Business Growth & Transformation',
       description:
-        'Ma Foi drives your business growth and transformation with cutting-edge strategies for success.',
+        'Nanfam drives your business growth and transformation with cutting-edge strategies for success.',
       link: '#',
     },
     {
       image: '/images/ms_1_11zon.jpg',
       title: 'Managed Services',
       description:
-        'Reimagine HR with Ma Foi\'s Managed Services, combining tech-driven payroll, compliance, and HRMS for aligned, scalable business success.',
+        "Reimagine HR with Nanfam Managed Services, combining tech-driven payroll, compliance, and HRMS for aligned, scalable business success.",
       link: '#',
     },
   ];
@@ -37,7 +37,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold  tracking-wider mb-2 text-white dark:text-gray-100">
+          <h2 className="text-4xl font-bold tracking-wider mb-2 text-white dark:text-gray-100">
             End-To-End Business Consulting Services
           </h2>
         </motion.div>
@@ -49,9 +49,22 @@ export default function ServicesSection() {
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.03 }}
-              className="relative flex flex-col h-full p-0 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200/20 hover:border-blue-300 overflow-hidden"
+              // --- THIS IS THE KEY CHANGE ---
+              // On hover, the card will scale up, lift up, and get a stronger shadow
+              whileHover={{
+                scale: 1.05,
+                y: -10,
+                boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.4)',
+              }}
+              // This transition applies to all animations on this element (view and hover)
+              transition={{
+                duration: 0.5,
+                delay: idx * 0.1,
+                type: 'spring', // A spring animation feels more physical
+                stiffness: 400,
+                damping: 17,
+              }}
+              className="relative flex flex-col h-full p-0 rounded-2xl shadow-lg border border-gray-200/20 overflow-hidden"
               style={{ background: '#192750' }}
             >
               <img

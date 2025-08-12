@@ -9,56 +9,14 @@ export default function CompaniesSection() {
 
   const companies = [
     { name: 'Verizon' },
-    { name: 'AT&T' },
-    { name: 'T-Mobile' },
-    { name: 'Sprint' },
-    { name: 'Comcast' },
-    { name: 'Charter' },
-    { name: 'Cox Communications' },
-    { name: 'CenturyLink' },
-    { name: 'Frontier Communications' },
-    { name: 'Windstream' },
-    { name: 'Mediacom' },
-    { name: 'Altice USA' },
-    { name: 'Cable One' },
-    { name: 'WideOpenWest' },
-    { name: 'RCN' },
-    { name: 'Grande Communications' },
-    { name: 'MetroNet' },
-    { name: 'Google Fiber' },
-    { name: 'Starry' },
-    { name: 'Viasat' },
-    { name: 'HughesNet' },
-    { name: 'Dish Network' },
-    { name: 'DirecTV' },
-    { name: 'Optimum' },
-    { name: 'Spectrum' },
-    { name: 'Xfinity' },
-    { name: 'Fios' },
-    { name: 'U-verse' },
-    { name: 'Optimum' },
-    { name: 'Cox Business' },
-    { name: 'CenturyLink Business' },
-    { name: 'Frontier Business' },
-    { name: 'Windstream Business' },
-    { name: 'Mediacom Business' },
-    { name: 'Altice Business' },
-    { name: 'Cable One Business' },
-    { name: 'WideOpenWest Business' },
-    { name: 'RCN Business' },
-    { name: 'Grande Business' },
-    { name: 'MetroNet Business' },
-    { name: 'Google Fiber Business' },
-    { name: 'Starry Business' },
-    { name: 'Viasat Business' },
-    { name: 'HughesNet Business' },
-    { name: 'Dish Business' },
-    { name: 'DirecTV Business' },
-    { name: 'Optimum Business' },
-    { name: 'Spectrum Business' },
-    { name: 'Xfinity Business' },
-    { name: 'Fios Business' },
-    { name: 'U-verse Business' },
+    { name: 'AT&T',  },
+    { name: 'T-Mobile',  },
+    { name: 'Sprint',  },
+    { name: 'Comcast',  },
+    { name: 'Charter', },
+    { name: 'Cox Communications',  },
+    { name: 'CenturyLink',  },
+    { name: 'Ascent Innovations', }, 
   ];
 
   const duplicatedCompanies = [...companies, ...companies];
@@ -113,7 +71,6 @@ export default function CompaniesSection() {
 
         {/* Scrollable Container */}
         <div className="relative">
-          {/* Removed left and right diagonal covers */}
           <div
             ref={scrollRef}
             onMouseEnter={() => setIsHovering(true)}
@@ -135,7 +92,10 @@ export default function CompaniesSection() {
                 transition={{ duration: 0.4, delay: index * 0.02 }}
                 className="flex-shrink-0 flex items-center justify-center h-20 w-48 bg-gray-800 dark:bg-white/10 rounded-lg backdrop-blur-sm text-white font-semibold text-lg border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-blue-300 transition-all duration-300"
               >
-                {company.name}
+                 <img 
+  src={company.logo} 
+  alt={company.name} 
+  className="h-full w-full object-fill"/> 
               </motion.div>
             ))}
           </div>

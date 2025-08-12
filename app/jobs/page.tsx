@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -101,7 +100,11 @@ export default function Jobs() {
   return (
     <main className="pt-16">
       {/* Hero Section */}
-      <section className="relative w-full h-screen bg-black overflow-hidden">
+      <section 
+        // --- THIS IS THE KEY CHANGE ---
+        // I've changed h-screen to h-[70vh] to make the section smaller.
+        className="relative w-full h-[70vh] bg-black overflow-hidden"
+      >
         <img src="/images/immm.webp" alt="Find Your Dream Job" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">{floatingElements}</div>
