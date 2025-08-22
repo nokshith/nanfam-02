@@ -79,24 +79,20 @@ export default function TestimonialsSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/10 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-200/20"
+              className="rounded-2xl p-8 md:p-12 shadow-lg border"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.08)', borderColor: 'rgba(255,255,255,0.2)' }}
             >
               <div className="flex items-center justify-center mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-              
+
               <blockquote className="text-lg md:text-xl text-gray-200 text-center mb-8 italic">
                 "{testimonials[currentIndex].content}"
               </blockquote>
-              
+
               <div className="flex items-center justify-center space-x-4">
-                {/* <img
-                  src={testimonials[currentIndex].avatar}
-                  alt={testimonials[currentIndex].name}
-                  className="w-16 h-16 rounded-full object-cover"
-                /> */}
                 <div className="text-center">
                   <div className="font-semibold text-white">
                     {testimonials[currentIndex].name}
@@ -111,14 +107,16 @@ export default function TestimonialsSection() {
 
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-white/10 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-lg transition-all duration-300"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#FFFFFF' }}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-white/10 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-lg transition-all duration-300"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#FFFFFF' }}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -129,9 +127,8 @@ export default function TestimonialsSection() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-blue-500' : 'bg-gray-600'
-              }`}
+              className="w-3 h-3 rounded-full transition-all duration-300"
+              style={{ backgroundColor: index === currentIndex ? '#3b82f6' : '#4b5563' }}
             />
           ))}
         </div>
