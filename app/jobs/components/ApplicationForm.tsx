@@ -71,7 +71,7 @@ export default function ApplicationForm({ jobId, jobTitle, companyName, onClose 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg w-full relative animate-fadeIn">
+      <div className="bg-gray-900 p-6 rounded-xl shadow-lg max-w-lg w-full relative animate-fadeIn">
         
         {/* Close Button */}
         <button

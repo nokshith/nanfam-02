@@ -132,7 +132,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-slate-100 dark:bg-slate-950">
+      <section className="py-20 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -157,7 +157,7 @@ export default function About() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="group p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-900"
+                className="group p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-slate-900"
               >
                 <div className="inline-flex p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl mb-6">
                   <value.icon className="w-6 h-6 text-white" />

@@ -65,7 +65,7 @@ export default function CompaniesSection() {
   }, [isHovering]);
 
   return (
-    <section className="py-20 transition-all duration-300 bg-slate-100 dark:bg-slate-950">
+    <section className="py-20 transition-all duration-300 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -95,7 +95,7 @@ export default function CompaniesSection() {
                 key={index}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                className="flex-shrink-0 flex items-center justify-center h-24 w-48 bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md"
+                className="flex-shrink-0 flex items-center justify-center h-24 w-48 bg-slate-800 rounded-lg p-6 shadow-md"
               >
                 <img
                   src={company.logo}

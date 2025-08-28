@@ -116,15 +116,15 @@ export default function Jobs() {
       </section>
 
       {/* Jobs Section */}
-      <section className="py-20 bg-slate-100 dark:bg-slate-950">
+      <section className="py-20 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Search & Filter */}
           <div className="mb-12">
-            <div className="bg-white/80 dark:bg-slate-800/60 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-slate-200/80 dark:border-slate-700">
+            <div className="bg-slate-800/60 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-slate-700">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="relative"><Search className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><input type="text" placeholder="Job title or company" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/></div>
-                <div className="relative"><MapPin className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><input type="text" placeholder="Location" value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/></div>
-                <div className="relative"><Users className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><select value={experienceFilter} onChange={(e) => setExperienceFilter(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"><option value="">All Types</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Internship">Internship</option></select></div>
+                <div className="relative"><Search className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><input type="text" placeholder="Job title or company" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/></div>
+                <div className="relative"><MapPin className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><input type="text" placeholder="Location" value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/></div>
+                <div className="relative"><Users className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" /><select value={experienceFilter} onChange={(e) => setExperienceFilter(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500"><option value="">All Types</option><option value="Full-time">Full-time</option><option value="Part-time">Part-time</option><option value="Internship">Internship</option></select></div>
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"><Filter className="w-5 h-5" /><span>Search</span></button>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function Jobs() {
           
           {!loading && !error && (
             <>
-              <div className="mb-8"><h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{filteredJobs.length} Jobs Available</h2></div>
+              <div className="mb-8"><h2 className="text-2xl font-bold text-white mb-2">{filteredJobs.length} Jobs Available</h2></div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {filteredJobs.map((job, index) => (
                   <motion.div
@@ -148,7 +148,7 @@ export default function Jobs() {
                   >
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
 
-                    <div className="relative bg-white dark:bg-slate-900 rounded-2xl p-6 h-full flex flex-col shadow-md">
+                    <div className="relative bg-slate-900 rounded-2xl p-6 h-full flex flex-col shadow-md">
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-4">
                            <Building2 className="h-6 w-6 text-slate-400" />
